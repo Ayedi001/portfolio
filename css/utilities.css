@@ -1,0 +1,26 @@
+.text-gradient {
+    background: linear-gradient(135deg, var(--a), var(--b));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.shadow-sm {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.shadow-md {
+    box-shadow: var(--i);
+}
+
+.shadow-lg {
+    box-shadow: var(--j);
+}
+
+.rounded-lg {
+    border-radius: 15px;
+}
+
+.rounded-xl {
+    border-radius: 20px;
+}

@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz - Programmation Web - Marwen Ayedi</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/utilities.css">
+    
+    <style>
+        .quiz-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .question-card {
+            margin-bottom: 30px;
+        }
+        .result-card {
+            display: none;
+        }
+        .correct-answer {
+            color: #28a745;
+            font-weight: bold;
+        }
+        .wrong-answer {
+            color: #dc3545;
+        }
+        .score-display {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <span class="brand-text">Marwen Ayedi</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="parcours.html">Parcours</a></li>
+                    <li class="nav-item"><a class="nav-link" href="matieres.html">Formation</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="quiz.html">Quiz</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="section-padding" style="padding-top: 120px;">
+        <div class="container">
+            <header class="section-header">
+                <h1 class="section-title">Quiz sur la Programmation Web</h1>
+                <div class="title-underline"></div>
+                <p class="lead">Testez vos connaissances en développement web (15 questions)</p>
+            </header>
+
+            <div class="quiz-container">
+                <form id="quizForm">
+                    <article class="question-card card">
+                        <div class="card-body">
+                            <h3>Question 1</h3>
+                            <p>Quelle balise HTML est utilisée pour créer un lien hypertexte?</p>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q1" id="q1a" value="a">
+                                <label class="form-check-label" for="q1a">a) &lt;link&gt;</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q1" id="q1b" value="b">
+                                <label class="form-check-label" for="q1b">b) &lt;a&gt;</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q1" id="q1c" value="c">
+                                <label class="form-check-label" for="q1c">c) &lt;href&gt;</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q1" id="q1d" value="d">
+                                <label class="form-check-label" for="q1d">d) &lt;url&gt;</label>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="question-card card">
+                        <div class="card-body">
+                            <h3>Question 2</h3>
+                            <p>Quelle propriété CSS est utilisée pour changer la couleur du texte?</p>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q2" id="q2a" value="a">
+                                <label class="form-check-label" for="q2a">a) text-color</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q2" id="q2b" value="b">
+                                <label class="form-check-label" for="q2b">b) color</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q2" id="q2c" value="c">
+                                <label class="form-check-label" for="q2c">c) font-color</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q2" id="q2d" value="d">
+                                <label class="form-check-label" for="q2d">d) text-style</label>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="question-card card">
+                        <div class="card-body">
+                            <h3>Question 3</h3>
+                            <p>Quelle méthode JavaScript est utilisée pour sélectionner un élément par son ID?</p>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q3" id="q3a" value="a">
+                                <label class="form-check-label" for="q3a">a) getElementById()</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q3" id="q3b" value="b">
+                                <label class="form-check-label" for="q3b">b) getElement()</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q3" id="q3c" value="c">
+                                <label class="form-check-label" for="q3c">c) selectById()</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q3" id="q3d" value="d">
+                                <label class="form-check-label" for="q3d">d) findElement()</label>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="question-card card">
+                        <div class="card-body">
+                            <h3>Question 4</h3>
+                            <p>Quelle balise HTML5 est utilisée pour définir un en-tête de section?</p>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q4" id="q4a" value="a">
+                                <label class="form-check-label" for="q4a">a) &lt;head&gt;</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q4" id="q4b" value="b">
+                                <label class="form-check-label" for="q4b">b) &lt;header&gt;</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q4" id="q4c" value="c">
+                                <label class="form-check-label" for="q4c">c) &lt;heading&gt;</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q4" id="q4d" value="d">
+                                <label class="form-check-label" for="q4d">d) &lt;h1&gt;</label>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="question-card card">
+                        <div class="card-body">
+                            <h3>Question 5</h3>
+                            <p>Quelle propriété CSS est utilisée pour créer un espacement entre les éléments?</p>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q5" id="q5a" value="a">
+                                <label class="form-check-label" for="q5a">a) spacing</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q5" id="q5b" value="b">
+                                <label class="form-check-label" for="q5b">b) margin</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q5" id="q5c" value="c">
+                                <label class="form-check-label" for="q5c">c) gap</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q5" id="q5d" value="d">
+                                <label class="form-check-label" for="q5d">d) distance</label>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="question-card card">
+                        <div class="card-body">
+                            <h3>Question 6</h3>
+                            <p>Quelle méthode JavaScript est utilisée pour ajouter un élément à la fin d'un tableau?</p>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q6" id="q6a" value="a">
+                                <label class="form-check-label" for="q6a">a) push()</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q6" id="q6b" value="b">
+                                <label class="form-check-label" for="q6b">b) add()</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q6" id="q6c" value="c">
+                                <label class="form-check-label" for="q6c">c) append()</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q6" id="q6d" value="d">
+                                <label class="form-check-label" for="q6d">d) insert()</label>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="question-card card">
+                        <div class="card-body">
+                            <h3>Question 7</h3>
+                            <p>Quelle balise HTML est utilisée pour créer une liste non ordonnée?</p>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q7" id="q7a" value="a">
+                                <label class="form-check-label" for="q7a">a) &lt;list&gt;</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q7" id="q7b" value="b">
+                                <label class="form-check-label" for="q7b">b) &lt;ul&gt;</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q7" id="q7c" value="c">
+                                <label class="form-check-label" for="q7c">c) &lt;ol&gt;</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q7" id="q7d" value="d">
+                                <label class="form-check-label" for="q7d">d) &lt;li&gt;</label>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="question-card card">
+                        <div class="card-body">
+                            <h3>Question 8</h3>
+                            <p>Quelle propriété CSS est utilisée pour rendre un élément flexible?</p>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q8" id="q8a" value="a">
+                                <label class="form-check-label" for="q8a">a) display: flex</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q8" id="q8b" value="b">
+                                <label class="form-check-label" for="q8b">b) display: block</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q8" id="q8c" value="c">
+                                <label class="form-check-label" for="q8c">c) display: inline</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q8" id="q8d" value="d">
+                                <label class="form-check-label" for="q8d">d) display: grid</label>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="question-card card">
+                        <div class="card-body">
+                            <h3>Question 9</h3>
+                            <p>Quelle méthode JavaScript est utilisée pour convertir une chaîne en nombre entier?</p>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q9" id="q9a" value="a">
+                                <label class="form-check-label" for="q9a">a) parseInt()</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q9" id="q9b" value="b">
+                                <label class="form-check-label" for="q9b">b) toInt()</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q9" id="q9c" value="c">
+                                <label class="form-check-label" for="q9c">c) convertInt()</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q9" id="q9d" value="d">
+                                <label class="form-check-label" for="q9d">d) number()</label>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="question-card card">
+                        <div class="card-body">
+                            <h3>Question 10</h3>
+                            <p>Quelle balise HTML est utilisée pour insérer une image?</p>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q10" id="q10a" value="a">
+                                <label class="form-check-label" for="q10a">a) &lt;img&gt;</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q10" id="q10b" value="b">
+                                <label class="form-check-label" for="q10b">b) &lt;image&gt;</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q10" id="q10c" value="c">
+                                <label class="form-check-label" for="q10c">c) &lt;picture&gt;</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q10" id="q10d" value="d">
+                                <label class="form-check-label" for="q10d">d) &lt;photo&gt;</label>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="question-card card">
+                        <div class="card-body">
+                            <h3>Question 11</h3>
+                            <p>Quelle propriété CSS est utilisée pour changer la taille de la police?</p>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q11" id="q11a" value="a">
+                                <label class="form-check-label" for="q11a">a) font-size</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q11" id="q11b" value="b">
+                                <label class="form-check-label" for="q11b">b) text-size</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q11" id="q11c" value="c">
+                                <label class="form-check-label" for="q11c">c) size</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q11" id="q11d" value="d">
+                                <label class="form-check-label" for="q11d">d) font-weight</label>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="question-card card">
+                        <div class="card-body">
+                            <h3>Question 12</h3>
+                            <p>Quelle méthode JavaScript est utilisée pour sélectionner tous les éléments correspondant à un sélecteur CSS?</p>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q12" id="q12a" value="a">
+                                <label class="form-check-label" for="q12a">a) querySelectorAll()</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q12" id="q12b" value="b">
+                                <label class="form-check-label" for="q12b">b) selectAll()</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q12" id="q12c" value="c">
+                                <label class="form-check-label" for="q12c">c) findAll()</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q12" id="q12d" value="d">
+                                <label class="form-check-label" for="q12d">d) getElements()</label>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="question-card card">
+                        <div class="card-body">
+                            <h3>Question 13</h3>
+                            <p>Quelle balise HTML5 est utilisée pour définir le contenu principal d'une page?</p>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q13" id="q13a" value="a">
+                                <label class="form-check-label" for="q13a">a) &lt;main&gt;</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q13" id="q13b" value="b">
+                                <label class="form-check-label" for="q13b">b) &lt;content&gt;</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q13" id="q13c" value="c">
+                                <label class="form-check-label" for="q13c">c) &lt;body&gt;</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q13" id="q13d" value="d">
+                                <label class="form-check-label" for="q13d">d) &lt;section&gt;</label>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="question-card card">
+                        <div class="card-body">
+                            <h3>Question 14</h3>
+                            <p>Quelle propriété CSS est utilisée pour créer un espacement interne dans un élément?</p>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q14" id="q14a" value="a">
+                                <label class="form-check-label" for="q14a">a) padding</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q14" id="q14b" value="b">
+                                <label class="form-check-label" for="q14b">b) margin</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q14" id="q14c" value="c">
+                                <label class="form-check-label" for="q14c">c) spacing</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q14" id="q14d" value="d">
+                                <label class="form-check-label" for="q14d">d) gap</label>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="question-card card">
+                        <div class="card-body">
+                            <h3>Question 15</h3>
+                            <p>Quelle méthode JavaScript est utilisée pour ajouter un écouteur d'événement à un élément?</p>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q15" id="q15a" value="a">
+                                <label class="form-check-label" for="q15a">a) addEventListener()</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q15" id="q15b" value="b">
+                                <label class="form-check-label" for="q15b">b) attachEvent()</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q15" id="q15c" value="c">
+                                <label class="form-check-label" for="q15c">c) on()</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q15" id="q15d" value="d">
+                                <label class="form-check-label" for="q15d">d) listen()</label>
+                            </div>
+                        </div>
+                    </article>
+
+                    <div class="text-center mb-4">
+                        <button type="submit" class="btn btn-primary btn-lg">
+                            <i class="fas fa-check-circle"></i> Valider le Quiz
+                        </button>
+                    </div>
+                </form>
+
+                <div id="resultCard" class="result-card card">
+                    <div class="card-body">
+                        <h2 class="text-center mb-4">Résultats du Quiz</h2>
+                        <div class="text-center mb-4">
+                            <div class="score-display" id="scoreDisplay"></div>
+                            <p class="lead" id="scoreText"></p>
+                        </div>
+                        <h3>Réponses Correctes:</h3>
+                        <ul id="correctAnswers" class="list-group list-group-flush"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p class="mb-0">&copy; 2026 Marwen Ayedi. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/quiz.js"></script>
+</body>
+</html>
